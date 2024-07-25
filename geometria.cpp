@@ -24,13 +24,13 @@ class Figura {
             cout << "Destruyendo figura: " << nombre << endl; 
         }
 
-        // Metodos abstractos (Polimorfismo)
+        // Metodo abstracto (Polimorfismo)
         virtual double calcularArea() = 0;
         
-        // Método getter para obtener el nombre
+        // Metodo getter para obtener el nombre
         string getNombre() { return nombre; }
 
-        // Método setter para establecer el número de lados
+        // Metodo setter para establecer el numero de lados
         void setNumLados(int numLados) { 
             this->numLados = numLados; 
         }
@@ -38,7 +38,7 @@ class Figura {
         //Metodo getter para obtener el numero de lados
         int getNumLados() { return numLados; }
 
-        // Método getter para obtener el área
+        // Método getter para obtener el area
         double getArea() { return area; }
 };
 
@@ -46,21 +46,21 @@ class Figura {
 class Circulo : public Figura {
     // Encapsulamiento
     private:
-        double radio; // Radio del círculo
+        double radio; // Radio del circulo
 
     public:
-        // Constructor sin parámetros
+        // Constructor sin parametros
         Circulo() : Figura("Círculo", 0), radio(0.0) {}
 
-        // Constructor con parámetros
+        // Constructor con parametros
         Circulo(string _nombre, double _radio) : Figura(_nombre, 0), radio(_radio) {}
 
         // Destructor
         ~Circulo() { 
-            cout << "Destruyendo círculo" << endl; 
+            cout << "Destruyendo circulo" << endl; 
         }
 
-        // Método para calcular el área del círculo
+        // Metodo para calcular el área del circulo
         double calcularArea() override { return 3.141592 * radio * radio; }
 
         // Método getter para obtener el radio
@@ -76,22 +76,22 @@ class Circulo : public Figura {
 class Rectangulo : public Figura {
     // Encapsulamiento
     private:
-        double base; // Base del rectángulo
+        double base; // Base del rectangulo
         double altura; // Altura del rectángulo
 
     public:
         // Constructor sin parámetros
-        Rectangulo() : Figura("Rectángulo", 4), base(0.0), altura(0.0) {}
+        Rectangulo() : Figura("Rectangulo", 4), base(0.0), altura(0.0) {}
 
         // Constructor con parámetros
         Rectangulo(string _nombre, double _base, double _altura) : Figura(_nombre, 4), base(_base), altura(_altura) {}
 
         // Destructor
         ~Rectangulo() {
-            cout << "Destruyendo rectángulo" << endl;
+            cout << "Destruyendo rectangulo" << endl;
         }
 
-        // Método para calcular el área del rectángulo
+        // Método para calcular el área del rectangulo
         double calcularArea() override { return base * altura; }
 
         // Método getter para obtener la base
@@ -120,14 +120,14 @@ class Triangulo : public Figura {
 
     public:
         // Constructor sin parámetros
-        Triangulo() : Figura("Triángulo", 3), base(0.0), altura(0.0) {}
+        Triangulo() : Figura("Triangulo", 3), base(0.0), altura(0.0) {}
 
         // Constructor con parámetros
         Triangulo(string _nombre, double _base, double _altura) : Figura(_nombre, 3), base(_base), altura(_altura) {}
 
         // Destructor
         ~Triangulo() {
-            cout << "Destruyendo triángulo" << endl;
+            cout << "Destruyendo triangulo" << endl;
         }
 
         // Método para calcular el área del triángulo
@@ -164,7 +164,7 @@ int main() {
         cout << "2. Modificar figura" << endl;
         cout << "3. Calcular area y mostrar caracteristicas" << endl;
         cout << "4. Eliminar figura" << endl;
-        cout << "4. Salir" << endl;
+        cout << "5. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         
@@ -248,7 +248,7 @@ int main() {
                     numFiguras--;
                     cout << "Figura eliminada." << endl;
                 } else {
-                    cout << "Índice no válido." << endl;
+                    cout << "Indice no valido." << endl;
                 }
                 break;
             case 5:
